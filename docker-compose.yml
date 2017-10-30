@@ -1,0 +1,31 @@
+version: '2'
+
+services:
+  server:
+    build: .
+    restart: always
+    links:
+      - db
+    volumes:
+      - .:/usr/src/app
+  db:
+    image: postgres:10-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: postgres
+  nginx:
+    image: nginx:alpine
+    restart: always
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 8080:80
+    links:
+      - server
+  adminer:
+    image: adminer
+    links:
+      - db
+    ports:
+      - 8090:8080
