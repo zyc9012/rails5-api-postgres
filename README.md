@@ -1,24 +1,13 @@
-# README
+# Rails 5 API Postgres
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Get started
 
-Things you may want to cover:
+* Edit your postgres table name and password in `docker-compose.yml`
 
-* Ruby version
+* Copy `config/database.yml.example` as `config/database.yml`
 
-* System dependencies
+* Edit postgres table name and password in `config/database.yml`
 
-* Configuration
+* `docker-compose up -d`
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Visit `http://localhost:8080`
